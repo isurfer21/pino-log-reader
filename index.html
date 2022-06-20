@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LogViewer is web-based log file viewer">
+    <meta name="author" content="Abhishek Kumar">
+    <meta name="copyright" content="Abhishek Kumar (c) 2022">
+    <meta name="license" content="MIT">
+    <title>Log Reader</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/milligram.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="app-ribbon mdl-shadow--2dp">
+        <form id="ctrlPanel">
+            <div class="row">
+                <div class="column">
+                    <img class="app-logo" src="img/logo.png">
+                </div>
+                <div class="column app-ctrl">
+                    <input type="text" name="filterStr" id="filterStr" placeholder="Filter Text" value="">
+                </div>
+                <div class="column app-ctrl">
+                    <div class="row vg-rv">
+                        <div class="column app-ctrl">
+                            <input type="radio" name="outputFmt" id="fmtParsed" value="parsed"> Parsed
+                        </div>
+                        <div class="column app-ctrl">
+                            <input type="radio" name="outputFmt" id="fmtRaw" value="raw" checked> Raw
+                        </div>
+                    </div>
+                </div>
+                <div class="column app-ctrl vg-fs">
+                    <input type="file" name="fileRef" id="fileRef" />
+                </div>
+                <div class="column app-ctrl">
+                    <input type="reset" value="Reset" id="btnReset" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="output hide">
+        <pre class="raw"><code></code></pre>
+        <div class="parsed hide"></div>
+    </div>
+    <div id="appAbout" class="modal-box hide">
+        <div class="modal-box-content">
+            <span class="modal-btn-close">&times;</span>
+            <div class="row">
+            	<div class="column">
+                    <img class="app-about-logo" src="img/icon.png">
+                </div>
+                <div class="column">
+		            <h3>Log Reader</h3>
+		            <p><i>Version 1.0.0</i></p>
+		        	<p>&copy; 2022 Abhishek Kumar.<br>All rights reserved.</p>
+		        </div>
+        	</div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
