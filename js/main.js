@@ -22,21 +22,24 @@ var main = function(e) {
             controls = {},
             model = {};
         var getParsedData = function(data) {
-            var ilines = data.split('\n'),
-                olines = [];
-            for (let i = 0; i < ilines.length; i++) {
-                let line = (!!ilines[i]) ? JSON.parse(ilines[i]) : ilines[i];
-                if (i == 0) {
-                    let titles = Object.keys(line).join('</th><th>');
-                    olines.push('<thead><tr><th>' + titles + '</th></tr></thead>');
+            var lines = data.split('\n'),
+                rows = [], thead;
+            for (let i = 0; i < lines.length; i++) {
+                if (!!lines[i]) {
+                    let line =  JSON.parse(lines[i]);
+                    if (i == 0) {
+                        let titles = Object.keys(line).join('</th><th>');
+                        thead = '<thead><tr><th>' + titles + '</th></tr></thead>';
+                    }
+                    line.level = LOG_LEVELS[line.level];
+                    line.time = (!!line.time) ? line.time.replace('T', ' ').replace('Z', '') : line.time;
+                    let cells = Object.values(line).join('</td><td>');
+                    rows.push('<td>' + cells + '</td>');
                 }
-                line.level = LOG_LEVELS[line.level];
-                line.time = (!!line.time) ? line.time.replace('T', ' ').replace('Z', '') : line.time;
-                let cells = Object.values(line).join('</td><td>');
-                olines.push('<td>' + cells + '</td>');
             }
-            let output = '<tbody><tr>' + olines.join('</tr><tr>') + '</tr></tbody>';
-            return '<table>' + output + '</table>';
+            let tbody = '<tbody><tr>' + rows.join('</tr><tr>') + '</tr></tbody>';
+            let output = '<table>' + thead + tbody + '</table>';
+            return output;
         }
         var getFilteredData = function(pattern, data) {
             var output = data;
