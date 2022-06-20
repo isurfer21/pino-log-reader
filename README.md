@@ -1,10 +1,12 @@
 # pino-log-reader
 
-The [Pino Log Reader](https://github.com/isurfer21/pino-log-reader) is a web based client-side log reader specifically built to view Pino logs.
+The [Pino Log Reader](https://github.com/isurfer21/pino-log-reader) is a web based client-side log reader specifically built to view [Pino](https://getpino.io/) logs.
 
-It parses the pino log files which consist of logged json object in each line and could render that in a *raw* or *tabular* format. 
+It parses the [Pino](https://github.com/pinojs/pino) log files which consist of logged json object in each line and could render that in a *raw* or *tabular* format. 
 
 It could filter the lines of the log based on the *Filter Text* criteria. 
+
+Try by clicking over [Pino Log Reader](https://isurfer21.github.io/pino-log-reader/). 
 
 ## Prerequisite
 
