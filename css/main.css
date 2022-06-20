@@ -81,7 +81,7 @@ html, body {
 
 .app-ribbon {
 	width: 100%;
-	background-color: whitesmoke;
+	background-color: gainsboro;
 	top:0;
 	position: fixed;
 }
@@ -142,8 +142,6 @@ html, body {
 
 .output .parsed table {
     border-left: 0.3rem solid palevioletred;
-    padding-left: 10px;
-    padding-right: 15px;
 }
 
 /* The Modal (background) */
@@ -198,3 +196,24 @@ html, body {
 	padding-top: 8px !important;
 }
 
+input.bg-white {
+    background-color: white;
+}
+
+table tr:nth-child(even){
+   background: ghostwhite;
+}
+
+table td:first-child, 
+table th:first-child {
+    padding-left: 1.5rem;
+}
+
+table td:last-child, 
+table th:last-child {
+    padding-right: 1.5rem;
+}
+
+table thead {
+    background-color: lavender;
+}
