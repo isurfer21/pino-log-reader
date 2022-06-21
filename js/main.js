@@ -11,7 +11,7 @@ const LOG_LEVELS = {
   40: 'warn',
   30: 'notice',
   20: 'info',
-  10: 'debug',
+  10: 'debug'
 };
 
 var main = function(e) {
@@ -33,6 +33,7 @@ var main = function(e) {
                     }
                     line.level = LOG_LEVELS[line.level];
                     line.time = (!!line.time) ? line.time.replace('T', ' ').replace('Z', '') : line.time;
+                    line.msg = (!!line.msg) ? `<pre>${line.msg}</pre>` : line.msg;
                     let cells = Object.values(line).join('</td><td>');
                     rows.push('<td>' + cells + '</td>');
                 }

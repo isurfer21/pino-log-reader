@@ -122,7 +122,7 @@ html, body {
 }
 
 .output {
-	margin: 5.5em 1em 1em 1em;
+	margin: 70px 0;
 	-webkit-user-select: text;
 }
 
@@ -216,4 +216,11 @@ table th:last-child {
 
 table thead {
     background-color: lavender;
+}
+
+table td pre {
+    margin-bottom: 0;
+    margin-top: 0;
+    background: transparent;
+    border: none;
 }
