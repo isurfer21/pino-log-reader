@@ -30,7 +30,7 @@ var main = function(e) {
                         thead = '<thead><tr><th>' + titles + '</th></tr></thead>';
                     }
                     line.level = LOG_LEVELS[line.level];
-                    line.time = (!!line.time) ? line.time.replace('T', ' ').replace('Z', '') : line.time;
+                    line.time = (!!line.time) ? new Date(line.time).toLocaleString() : line.time;
                     line.msg = (!!line.msg) ? `<pre>${line.msg}</pre>` : line.msg;
                     let cells = Object.values(line).join('</td><td>');
                     rows.push('<td>' + cells + '</td>');
