@@ -4,14 +4,12 @@
  */
 
 const LOG_LEVELS = {
-  80: 'emerg',
-  70: 'alert',
-  60: 'crit',
+  60: 'fatal',
   50: 'error',
   40: 'warn',
-  30: 'notice',
-  20: 'info',
-  10: 'debug'
+  30: 'info',
+  20: 'debug',
+  10: 'trace'
 };
 
 var main = function(e) {
